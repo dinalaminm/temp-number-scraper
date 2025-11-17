@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temp Number UI</title>
+</head>
+<body>
+
+<h2>Temp Numbers</h2>
+<div id="numbers">Loading...</div>
+
+<script>
+const api = "YOUR_BACKEND_URL/api/numbers";
+
+fetch(api).then(r => r.json()).then(d => {
+    document.getElementById("numbers").innerHTML =
+        d.map(x => `<p>${x.number}</p>`).join("");
+});
+</script>
+
+</body>
+</html>
